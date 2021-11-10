@@ -1,0 +1,49 @@
+{
+  "snapshot": {
+    "aggregate_id": "CDS_AG_10138",
+    "created_on": "2021-10-09T21:44:36+00:00",
+    "mode": "DELTA",
+    "stock": [
+      {
+        "quantity": 1418,
+        "sku": "CDS10454435"
+      },
+      {
+        "quantity": 2068,
+        "sku": "CDS16123649"
+      },
+      {
+        "quantity": 705,
+        "sku": "CDS16735576"
+      },
+      {
+        "quantity": 4821,
+        "sku": "CDS20349950"
+      },
+      {
+        "quantity": 2873,
+        "sku": "CDS84724595"
+      },
+      {
+        "quantity": 2076,
+        "sku": "CDS85942592"
+      },
+      {
+        "quantity": 241,
+        "sku": "CDS85942608"
+      },
+      {
+        "quantity": 316,
+        "sku": "CDS85954687"
+      },
+      {
+        "quantity": 133,
+        "sku": "CDS86074391"
+      },
+      {
+        "quantity": 297,
+        "sku": "CDS86182126"
+      }
+    ]
+  }
+}
