@@ -7,13 +7,14 @@ from loguru import logger
 from pygments import highlight, lexers, formatters
 
 
-def get_jsonpath():
-    parser = argparse.ArgumentParser(description='Process a jsonpath over stdin.')
+def get_args():
+    parser = argparse.ArgumentParser(description='Process a JSONPath expression over a JSON read from <stdin>.')
     parser.add_argument('jsonpath', help='valid jsonpath expression')
+    parser.add_argument('--color', help='enable/disable colored highlights', action=argparse.BooleanOptionalAction, default=True)
 
     args = parser.parse_args()
-    logger.trace(f'using jsonpath: {args.jsonpath}')
-    return args.jsonpath
+    logger.trace(f'using parsed arguments: {args}')
+    return args
 
 
 def get_data():
@@ -28,15 +29,17 @@ def colorize(json_data):
     return highlight(json_data, lexers.JsonLexer(), formatters.TerminalFormatter()).strip()
 
 
-def print_results(results):
+def print_results(results, color):
     for result in results:
         logger.trace(f'json parsing result: {result} {type(result)}')
-        print(colorize(json.dumps(result)))
+        output = json.dumps(result)
+        print(colorize(output)if color else output)
 
 
 def main():
     try:
-        print_results([x.value for x in parse(get_jsonpath()).find(get_data())])
+        args = get_args()
+        print_results([x.value for x in parse(args.jsonpath).find(get_data())], args.color)
     except Exception as e:
         print(e, file=sys.stderr)
 
