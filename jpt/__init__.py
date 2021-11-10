@@ -18,9 +18,7 @@ def get_jsonpath():
 
 def get_data():
     if not sys.stdin.isatty():
-        data = ''.join(sys.stdin.readlines())
-        logger.trace(f'input: {data}')
-        return json.loads(data)
+        return json.loads(''.join(sys.stdin.readlines()))
     else:
         logger.error("Could not read json from <stdin>")
         sys.exit(1)
