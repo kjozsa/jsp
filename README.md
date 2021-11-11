@@ -37,19 +37,20 @@ cat sample-multi.json | jsp
 
 ### Usage instructions
 ```
-usage: jsp [-h] [--color | --no-color] [-f | --format | --no-format | -i | --indent | --no-indent]
-           jsonpath
+usage: jsp [-h] [-c | --color | --no-color] [-f | --format | --no-format | -i | --indent | --no-indent] [-v] [jsonpath]
 
-Process a JSONPath expression over a JSON read from <stdin>.
+jsp v0.8.1 - Process a JSONPath expression over a JSON read from <stdin>.
 
 positional arguments:
   jsonpath              valid jsonpath expression
 
 optional arguments:
   -h, --help            show this help message and exit
-  --color, --no-color   enable/disable colored highlights (default: True)
+  -c, --color, --no-color
+                        enable/disable colored highlights (default: True)
   -f, --format, --no-format, -i, --indent, --no-indent
                         enable/disable formatting output (default: False)
+  -v, --version         show program's version number and exit
 ```
 
 The original name of this project was meant to be JPT as JsonPath Tools, but PyPI had a same-named obsolete package. Therefore for now, this will run by the name JSP - hopefully noone remembers Java Server Pages anymore anyway 😀 

@@ -7,17 +7,17 @@ from jsonpath_ng.ext import parse
 from loguru import logger
 from pygments import highlight, lexers, formatters
 
-__version__ = '0.8'
+__version__ = '0.8.1'
 parser = None
 
 
 def get_args():
     global parser
     parser = argparse.ArgumentParser(description='%(prog)s v' + __version__ + ' - Process a JSONPath expression over a JSON read from <stdin>.')
-    parser.add_argument('-v', '--version', action='version', version='%(prog)s v' + __version__)
     parser.add_argument('jsonpath', help='valid jsonpath expression', nargs='?', default='$')
-    parser.add_argument('--color', help='enable/disable colored highlights', action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument('-c', '--color', help='enable/disable colored highlights', action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument('-f', '--format', '-i', '--indent', help='enable/disable formatting output', action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument('-v', '--version', action='version', version='%(prog)s v' + __version__)
 
     args = parser.parse_args()
     logger.trace(f'using parsed arguments: {args}')
