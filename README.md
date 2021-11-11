@@ -1,5 +1,5 @@
 ## JSONPath command line tool with syntax highlight and formatting
-_it's `jq`, using JSONPath syntax_
+_it's like `jq`, but using JSONPath syntax_
 
 ### Install / upgrade
 Use the standard python package manager: 
