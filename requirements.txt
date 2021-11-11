@@ -1,3 +1,5 @@
 loguru
 jsonpath-ng
 pygments
+pytest
+
