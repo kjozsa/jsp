@@ -11,6 +11,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='Process a JSONPath expression over a JSON read from <stdin>.')
     parser.add_argument('jsonpath', help='valid jsonpath expression')
     parser.add_argument('--color', help='enable/disable colored highlights', action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument('-f', '--format', help='enable/disable formatting output', action=argparse.BooleanOptionalAction, default=True)
 
     args = parser.parse_args()
     logger.trace(f'using parsed arguments: {args}')
@@ -29,17 +30,17 @@ def colorize(json_data):
     return highlight(json_data, lexers.JsonLexer(), formatters.TerminalFormatter()).strip()
 
 
-def print_results(results, color):
+def print_results(results, color, format):
     for result in results:
         logger.trace(f'json parsing result: {result} {type(result)}')
-        output = json.dumps(result)
-        print(colorize(output)if color else output)
+        output = json.dumps(result, indent=3) if format else json.dumps(result)
+        print(colorize(output) if color else output)
 
 
 def main():
     try:
         args = get_args()
-        print_results([x.value for x in parse(args.jsonpath).find(get_data())], args.color)
+        print_results([x.value for x in parse(args.jsonpath).find(get_data())], args.color, args.format)
     except Exception as e:
         print(e, file=sys.stderr)
 
