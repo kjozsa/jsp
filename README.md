@@ -1,6 +1,8 @@
-## JSONPath CLI tool with syntax highlight and formatting
+## JSONPath command line tool with syntax highlight and formatting
+_it's `jq`, using JSONPath syntax_
 
 ### Install / upgrade
+Use the standard python package manager: 
 `pip install -U jsp`
 
 ### Basic examples
@@ -57,4 +59,4 @@ optional arguments:
 ```
 
 ### About the name
-The original name of this project was meant to be JPT as JsonPath Tools, but PyPI had a same-named obsolete package. Therefore for now, this will run by the name JSP - hopefully noone remembers Java Server Pages anymore anyway 😀 
+Originally the name of this project was meant to be JPT as JsonPath Tools, but PyPI had a same-named obsolete package. Therefore, this will now run by the name JSP - hopefully noone remembers Java Server Pages anymore anyway 😀 
