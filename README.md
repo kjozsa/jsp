@@ -1,6 +1,9 @@
-### JSONPath CLI tool with syntax highlight and formatting
+## JSONPath CLI tool with syntax highlight and formatting
 
-Basic example scenarios:
+### Install / upgrade
+`pip install -U jsp`
+
+### Basic examples
 
 ```shell
 $ cat sample.json | jsp $.store.bicycle.color
@@ -53,4 +56,5 @@ optional arguments:
   -v, --version         show program's version number and exit
 ```
 
+### About the name
 The original name of this project was meant to be JPT as JsonPath Tools, but PyPI had a same-named obsolete package. Therefore for now, this will run by the name JSP - hopefully noone remembers Java Server Pages anymore anyway 😀 
