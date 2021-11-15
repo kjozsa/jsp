@@ -7,7 +7,7 @@ from jsonpath_ng.ext import parse
 from loguru import logger
 from pygments import highlight, lexers, formatters
 
-__version__ = '0.8.1'
+__version__ = '0.8.4'
 parser = None
 
 
@@ -53,8 +53,9 @@ def print_results(results, color, format):
 def main():
     try:
         args = get_args()
+        colored = sys.stdout.isatty() and args.color
         for data in read_input():
-            print_results([x.value for x in parse(args.jsonpath).find(data)], args.color, args.format)
+            print_results([x.value for x in parse(args.jsonpath).find(data)], colored, args.format)
 
     except Exception as e:
         print(e, file=sys.stderr)
