@@ -43,10 +43,10 @@ def colorize(json_data):
     return highlight(json_data, lexers.JsonLexer(), formatters.TerminalFormatter()).strip()
 
 
-def print_results(results, color, format):
+def print_results(results, color, formatting):
     for result in results:
         logger.trace(f'json parsing result: {result} {type(result)}')
-        output = json.dumps(result, indent=3) if format else json.dumps(result)
+        output = json.dumps(result, indent=3) if formatting else json.dumps(result)
         print(colorize(output) if color else output)
 
 
