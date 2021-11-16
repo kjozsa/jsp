@@ -42,7 +42,7 @@ cat sample-multi.json | jsp
 
 ### Usage instructions
 ```
-usage: jsp [-h] [-c | --color | --no-color] [-f | --format | --no-format | -i | --indent | --no-indent] [-v] [jsonpath]
+usage: jsp [-h] [-c | --color | --no-color] [-f | --format | --no-format] [-i INDENT] [-v] [jsonpath]
 
 jsp v0.8.5 - Process a JSONPath expression over a JSON read from <stdin>.
 
@@ -53,9 +53,12 @@ optional arguments:
   -h, --help            show this help message and exit
   -c, --color, --no-color
                         enable/disable colored highlights (default: True)
-  -f, --format, --no-format, -i, --indent, --no-indent
+  -f, --format, --no-format
                         enable/disable formatting output (default: False)
+  -i INDENT, --indent INDENT
+                        number of spaces for indent on formatting
   -v, --version         show program's version number and exit
+
 ```
 
 ### About the name
