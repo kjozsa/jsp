@@ -44,7 +44,7 @@ cat sample-multi.json | jsp
 ```
 usage: jsp [-h] [-c | --color | --no-color] [-f | --format | --no-format] [-i INDENT] [-v] [jsonpath]
 
-jsp v0.8.5 - Process a JSONPath expression over a JSON read from <stdin>.
+jsp v0.8.6 - Process a JSONPath expression over a JSON read from <stdin>.
 
 positional arguments:
   jsonpath              valid jsonpath expression

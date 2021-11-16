@@ -7,7 +7,7 @@ from jsonpath_ng.ext import parse
 from loguru import logger
 from pygments import highlight, lexers, formatters
 
-__version__ = '0.8.5'
+__version__ = '0.8.6'
 parser = None
 
 
@@ -45,7 +45,6 @@ def colorize(json_data):
 
 
 def print_results(results, color, formatting, indent=2):
-    logger.info("indent {}", indent)
     for result in results:
         logger.trace(f'json parsing result: {result} {type(result)}')
         output = json.dumps(result, indent=int(indent)) if formatting else json.dumps(result)
